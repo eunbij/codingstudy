@@ -22,14 +22,23 @@
             float: left;
             width: 40%;
         }
-        .gnb {
-            
-        }
-        .gnb li{
+        .gnb>nav>ul>li{
             /* 플롯 */
             float: left;
             padding: 10px;
+            /* 위치기준값 */
+            position: relative;
         }
+        header .gnb .submenu {
+            /* 포지션 */
+            position: absolute;
+            left: 10px;
+            top: 50px;
+            z-index: 1;
+        }
+        header .gnb .submenu1{
+            display: none;
+        } 
         #wrap a {
             text-decoration: none;
             color: inherit;
@@ -79,7 +88,25 @@
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            
+            $('.gnb .submenu').hide();
+            $('.gnb .menu1').on({'mouseenter':function(){
+                $(this).children().next().stop().show();
+            },'mouseleave':function(){
+                $(this).children().next().stop().hide();
+            }});
+            $('.gnb .menu2').on({'mouseenter':function(){
+                $(this).children().next().stop().slideDown();
+            },'mouseleave':function(){
+                $(this).children().next().stop().slideUp();
+            }});
+            $('.gnb .menu3').on({'mouseenter':function(){
+                $(this).children().next().stop().fadeIn();
+            },'mouseleave':function(){
+                $(this).children().next().stop().fadeOut();
+            }});
+            $('.gnb .menu4').on('click',function(){
+                $(this).children().next().stop().show();
+            });
         });
     </script>
 </head>
@@ -90,13 +117,61 @@
             <h1>LOGO</h1>
             <div class="gnb">
                 <nav>
-                    <ul>
-                        <li><a href="#">MENU1</a></li>
-                        <li><a href="#">MENU2</a></li>
-                        <li><a href="#">MENU3</a></li>
-                        <li><a href="#">MENU4</a></li>
-                        <li><a href="#">MENU5</a></li>
-                        <li><a href="#">MENU6</a></li>
+                    <ul class="event">
+                        <li class="menu1">
+                            <a href="#">MENU1</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu2">
+                            <a href="#">MENU2</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu3">
+                            <a href="#">MENU3</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu4">
+                            <a href="#">MENU4</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu5">
+                            <a href="#">MENU5</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu6">
+                            <a href="#">MENU6</a>
+                            <ul class="submenu">
+                                <li><a href="#">menu1</a></li>
+                                <li><a href="#">menu2</a></li>
+                                <li><a href="#">menu3</a></li>
+                                <li><a href="#">menu4</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
