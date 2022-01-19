@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리+플롯+플렉스</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/eb_font.css">
+    <style>
+        .w960 {
+            width: 960px;
+            margin: 0 auto;
+        }
+        /* Header */
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            width: 200px;
+            line-height: 36px;
+            /* 플롯 */
+            float: left;
+        }
+        header .lnb ul{
+            width: 700px;
+            line-height: 36px;
+            /* 플롯 */
+            float: right;
+        }
+        header .lnb .main_menu li {
+            float: left;
+            padding: 0 20px;
+            margin: 0 20px;
+        }
+        header .lnb .sub_menu {
+            display: none;
+        }
+        /* Section */
+        section {
+            margin-top: 100px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .bgc_1 {
+            background-color: #ccc;
+        }
+        .float .float_first {
+            width: 300px;
+            height: 300px;
+            background-color: #259bd6;
+            /* 플롯 */
+            float: left;
+            margin-right: 30px;
+            padding: 10px;
+        }
+        .float .float_second {
+            width: 300px;
+            height: 300px;
+            background-color: #f18a88;
+            /* 플롯 */
+            float: left;
+            margin-right: 30px;
+            padding: 10px;
+        }
+        .float .float_third {
+            width: 300px;
+            height: 300px;
+            background-color: #e8e382;
+            /* 플롯 */
+            float: right;
+            padding: 10px;
+        }
+        .bgc_2{
+            background-color: #555;
+            margin-top: 100px;
+        }
+        .flex {
+            /* 플렉스 */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .flex_first{
+            width: 300px;
+            height: 300px;
+            background-color: #e8e382;
+            padding: 10px;
+        }
+        .flex_second {
+            width: 300px;
+            height: 300px;
+            background-color: #259bd6;
+            padding: 10px;
+        }
+        .flex_third {
+            width: 300px;
+            height: 300px;
+            background-color: #f18a88;
+            padding: 10px;
+        }
+        /* 포지션 */
+        .float {
+            position: relative;
+            top: -40px;
+            left: 0;
+            z-index: 1;
+        }
+        .flex {
+            position: relative;
+            top: -40px;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+    <!-- 제이쿼리 코어파일 추가 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- 제이쿼리 코어파일 CDN 추가 -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Header -->
+        <header class="w960 cf">
+            <h1>LOGO</h1>
+            <div class="lnb">
+                <ul class="main_menu">
+                    <li><a href="#">Menu1</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                            <li><a href="#">메뉴3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu2</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                            <li><a href="#">메뉴3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Menu3</a>
+                        <ul class="sub_menu">
+                            <li><a href="#">메뉴1</a></li>
+                            <li><a href="#">메뉴2</a></li>
+                            <li><a href="#">메뉴3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- /Header -->
+        <!-- Section -->
+        <section>
+            <div class="bgc_1">
+                <div class="float w960 cf">
+                    <article class="float_first">
+                        <h2>섹션1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quod, animi
+                            inventore nesciunt expedita voluptate? At dolores, adipisci, consequuntur saepe
+                            nemo animi molestias dignissimos, dolor nulla voluptas doloremque consequatur!
+                            Expedita.
+                        </p>
+                    </article>
+                    <article class="float_second">
+                        <h2>섹션2</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="float_third">
+                        <h2>섹션3</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                </div>
+            </div>
+            <div class="bgc_2">
+                <div class="flex w960">
+                    <article class="flex_first">
+                        <h2>섹션1</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="flex_second">
+                        <h2>섹션2</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="flex_third">
+                        <h2>섹션3</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- /Section -->
+        <!-- Footer -->
+        <!-- /Footer -->
+    </div>
+</body>
+</html>
