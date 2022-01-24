@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/eb_font.css">
+    <style>
+        .w960 {
+            width: 960px;
+            margin: 0 auto;
+        }
+        /* Header */
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        /* 1depth GNB메뉴  */
+        .lnb .main_menu{
+            /* 테이블 디스플레이 */
+            display: table;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .lnb .main_menu>li {
+            display: table-cell;
+            width: 200px;
+            color: #fff;
+            background: #423142;
+            transition: all 1s;
+            cursor: pointer;
+            /* 위치기준값 */
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+        }
+        .lnb .main_menu li:hover {
+            background: violet;
+        }
+        .lnb .main_menu li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* 2depth GNB메뉴  */
+        .sub_menu {
+            width: 100%;
+            /* 포지션 */
+            position: absolute;
+            z-index: 100;
+            display: none;
+        }
+        .sub_menu p {
+            background: palevioletred;
+            transition: all 1s;
+            margin: 0;
+            padding: 0;
+        }
+        .sub_menu p:hover {
+            background: #ad2a67;
+        }
+        /* Section */
+        section {
+            margin-top: 150px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .bgc_1 {
+            background-color: #ccc;
+            margin-bottom: 100px;
+        }
+        .float .float_first {
+            width: 300px;
+            height: 300px;
+            background-color: #259bd6;
+            /* 플롯 */
+            float: left;
+            margin-right: 30px;
+            padding: 10px;
+        }
+        .float .float_second {
+            width: 300px;
+            height: 300px;
+            background-color: #f18a88;
+            /* 플롯 */
+            float: left;
+            margin-right: 30px;
+            padding: 10px;
+        }
+        .float .float_third {
+            width: 300px;
+            height: 300px;
+            background-color: #e8e382;
+            /* 플롯 */
+            float: right;
+            padding: 10px;
+        }
+        .bgc_2{
+            background-color: #555;
+            margin-top: 100px;
+        }
+        .flex {
+            /* 플렉스 */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .flex_first{
+            width: 300px;
+            height: 300px;
+            background-color: #e8e382;
+            padding: 10px;
+        }
+        .flex_second {
+            width: 300px;
+            height: 300px;
+            background-color: #259bd6;
+            padding: 10px;
+        }
+        .flex_third {
+            width: 300px;
+            height: 300px;
+            background-color: #f18a88;
+            padding: 10px;
+        }
+        /* 포지션 */
+        .float {
+            position: relative;
+            top: -40px;
+            left: 0;
+            z-index: 1;
+        }
+        .flex {
+            position: relative;
+            top: -40px;
+            left: 0;
+            z-index: 1;
+        }
+        /* 버튼 추가 */
+        .button_s1 {
+            /* width: 100%; */
+        }
+        .button_s1 li {
+            text-align: center;
+            margin: 0 20px;
+        }
+        .button_s1 button {
+            width: 100px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            background-color: yellowgreen;
+        }
+        .button_s2{
+            /* width: 100%; */
+            text-align: center;
+        }
+        .button_s2 button {
+            width: 100px;
+            border-radius: 4px;
+            background-color: skyblue;
+        }
+    </style>
+    <!-- 제이쿼리 코어파일 추가 -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- 제이쿼리 코어파일 CDN 추가 -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.main_menu li').mouseenter(function(){
+                $(this).children('.sub_menu').stop().slideDown();
+            });
+            $('.main_menu li').mouseleave(function(){
+                $(this).children('.sub_menu').stop().slideUp();
+            });
+            $('.float p, .flex p').hide();
+            $('.button_s1 .btnopen').click(function(){
+                $('.float p').stop().show();
+            });
+            $('.button_s1 .btnclose').click(function(){
+                $('.float p').stop().hide();
+            });
+            $('.button_s2 .btnopen2').click(function(){
+                $('.flex p').stop().fadeIn(500);
+            });
+            $('.button_s2 .btnclose2').click(function(){
+                $('.flex p').stop().fadeOut(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- Header -->
+        <header class="w960">
+            <h1>LOGO</h1>
+            <div class="lnb">
+                <ul class="main_menu">
+                    <li>
+                        <a href="#">Menu1</a>
+                        <div class="sub_menu">
+                            <p><a href="#">메뉴1</a></p>
+                            <p><a href="#">메뉴2</a></p>
+                            <p><a href="#">메뉴3</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Menu2</a>
+                        <div class="sub_menu">
+                            <p><a href="#">메뉴1</a></p>
+                            <p><a href="#">메뉴2</a></p>
+                            <p><a href="#">메뉴3</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Menu3</a>
+                        <div class="sub_menu">
+                            <p><a href="#">메뉴1</a></p>
+                            <p><a href="#">메뉴2</a></p>
+                            <p><a href="#">메뉴3</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- /Header -->
+        <!-- Section -->
+        <section>
+            <div class="button_s1">
+                <ul>
+                    <li>
+                        <button class="btnopen">열기</button>
+                        <button class="btnclose">닫기</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="bgc_1">
+                <div class="float w960 cf">
+                    <article class="float_first">
+                        <h2>섹션1</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quod, animi
+                            inventore nesciunt expedita voluptate? At dolores, adipisci, consequuntur saepe
+                            nemo animi molestias dignissimos, dolor nulla voluptas doloremque consequatur!
+                            Expedita.
+                        </p>
+                    </article>
+                    <article class="float_second">
+                        <h2>섹션2</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="float_third">
+                        <h2>섹션3</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                </div>
+            </div>
+            <div class="button_s2">
+                <button class="btnopen2">열기</button>
+                <button class="btnclose2">닫기</button>
+            </div>
+            <div class="bgc_2">
+                <div class="flex w960">
+                    <article class="flex_first">
+                        <h2>섹션1</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="flex_second">
+                        <h2>섹션2</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                    <article class="flex_third">
+                        <h2>섹션3</h2>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, molestias
+                            delectus totam maiores tempore odio aliquid libero ab blanditiis nemo officia,
+                            enim repudiandae, pariatur quod magnam dolores iste repellat? Nihil?
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- /Section -->
+        <!-- Footer -->
+        <!-- /Footer -->
+    </div>
+</body>
+</html>
