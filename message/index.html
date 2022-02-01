@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메시지를 남겨보세요</title>
+    <meta property="og:title" content="99 님의 덕담 페이지"/>
+    <meta property="og:description" content="덕담 한마디 남겨주세요!"/>
+    <meta property="og:image" content="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/ogimage.png"/>
+    <script src="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/free_newyear_2022.js"></script> 
+    <script> let mycode = '9283db5fb8db76f2ceaf4eac435bad41'; </script>
+    <script src="./js/duckdam.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Cafe24Ssurround';
+            src: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/Cafe24Ssurround.woff') format('woff');
+        }
+
+        * {
+            font-family: 'Cafe24Ssurround';
+        }
+        body {
+            margin: 0;
+        }
+        .background {
+            background: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/bg_default.png') center;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            max-width: 450px;
+            margin: auto;
+        }
+        .title {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            /* 세로 길이를 5/100 띄움  */
+            padding-top: 5vh;
+            color: #3f3732;
+        }
+        .title h1 {
+            font-size: 22px;
+            background-color: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 16px;
+            margin-bottom: 8px;
+        }
+        .title p {
+            font-size: 18px;
+        }
+        .title p span {
+            font-size: 22px;
+        }
+        /* .btn {
+            background-color: #3f3732;
+            color: #f5f5f5;
+            width: 300px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 18px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: fixed;
+            bottom: 16px;
+            left: calc(50% - 150px);
+        } */
+        #success {
+            width: 300px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: #3f3732;
+            color: #f5f5f5;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+        }
+        .box img {
+            width: 70px;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="title">
+            <h1>메시지를 남겨보세요!!</h1>
+            <p>받은 메시지 : <span>2개</span></p>
+        </div>
+        <div class="box">
+            <!-- <img src="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/object3.png" alt="아이콘"> -->
+        </div>
+        <!-- <div class="btn">메시지 보내기</div> -->
+        <button class="btn" id="success">메시지 보내기</button>
+    </div>
+    <script>
+        $('.box img').click(function(){
+            alert('새해 복 많이 받으세요');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+        $('#success').on('click', function(){
+            toastr.success('전송이 완료되었습니다.');
+        });
+    </script>
+</body>
+</html>
