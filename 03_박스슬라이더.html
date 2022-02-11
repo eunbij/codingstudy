@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ebjj">
+    <meta name="description" content="Portfolio, Flex 구조">
+    <title>bxslider</title>
+    <!-- BootStrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/notosans_kr_CDN.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- System Font CSS(optional) -->
+    <!-- <link rel="stylesheet" href="./css/system_font.css"> -->
+    <!-- No Scrollbar CSS -->
+    <!-- <link rel="stylesheet" href="./css/no_scrollbar.css"> -->
+    <!-- JQ PlugIn - Box Slider CSS -->
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <!-- 프로젝트 페이지 CSS -->
+
+    <!-- HTML5 JS File -->
+    <script src="./js/html5shiv.js"></script>
+    <script src="./js/respond.src.js"></script>
+    <!-- JQ PlugIn -->
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- PreFix Free -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- JQ PlugIn - Box Slider JS -->
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script src="./js/jquery.bxslider.js"></script>
+    <!-- 프로젝트 페이지 SCRIPT -->
+
+
+    <style>   
+        /* Slider */
+        .slider>img {
+            max-width: 100%;
+        }
+
+        /* 220203 버튼 추가  */
+        .slider {
+            /* 위치기준값 */
+            position: relative;
+
+        }
+        article .more_btn_01{
+            width: 220px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid #000;
+            font-size: 1.4rem;
+            /* 포지션 */
+            position: absolute;
+            left: 360px;
+            bottom: 80px;
+            z-index: 22;
+        }
+        article .more_btn_02{
+            width: 220px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid #000;
+            font-size: 1.4rem;
+            /* 포지션 */
+            position: absolute;
+            left: calc(50% - 110px);
+            bottom: 160px;
+            z-index: 22;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div class="banner">
+            <div id="gallery_wrap">
+                <h2>
+                    <ul class="slider">
+                        <li><img src="./images/mainimage01.jpg" class="sliderimg01" alt="슬라이드이미지01"></li>
+                        <li><img src="./images/mainimage02.jpg" class="sliderimg02" alt="슬라이드이미지02"></li>
+                    </ul>
+                </h2>
+                <!-- <a href="#" class="more_btn_01">자세히보기</a> -->
+                <!-- <a href="#" class="more_btn_02">자세히보기</a> -->
+            </div>
+        </div>
+    </article>
+    <script>
+        $('.slider').bxSlider({
+            mode: 'horizontal',
+            speed: 500,
+            pause: 3000,
+            pager: true,
+            sideWidth: 1920,
+            auto: true,
+            autoHover: true
+        });
+
+        var addBtn01 = $('<a href="#" class="more_btn_01">자세히보기</a>');
+        // $(addBtn01).insertAfter($('.slider .sliderimg01'));
+        $('.slider .sliderimg01').after(addBtn01);
+        var addBtn02 = $('<a href="#" class="more_btn_02">자세히보기</a>');
+        // $(addBtn02).insertAfter($('.slider .sliderimg02'));
+        $('.slider .sliderimg02').after(addBtn02);
+    </script>
+</body>
+</html>
